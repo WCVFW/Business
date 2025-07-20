@@ -8,7 +8,7 @@ import {
   Coffee,
   Scissors,
   Stethoscope,
-  ArrowRight
+  ArrowRight,
 } from "lucide-react";
 import HeroSection from "@/pages/HeroSection";
 import Footer from "@/components/Footer";
@@ -16,41 +16,45 @@ import Footer from "@/components/Footer";
 const services = [
   {
     icon: Bike,
-    name: "Bike Rides",
-    description: "Explore convenient and affordable two-wheeler rides for daily travel and adventure.",
+    name: "Affordable Bike Ride Services",
+    description:
+      "Book quick and cost-effective two-wheeler rides for everyday travel or leisure with verified drivers and GPS tracking.",
     image:
       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80",
   },
   {
     icon: Hotel,
-    name: "Hotels",
-    description: "Book premium and budget stays with seamless booking and verified reviews.",
+    name: "Hotel Booking Services",
+    description:
+      "Find top-rated hotels with easy online booking, verified customer reviews, and competitive pricing across locations.",
     image:
       "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80",
   },
   {
     icon: Coffee,
-    name: "Food & Dining",
-    description: "Reserve tables, order food online, and enjoy exclusive dining offers nearby.",
+    name: "Online Food Ordering & Dining Reservations",
+    description:
+      "Reserve restaurant tables or order your favorite meals online with exclusive deals and nearby dining options.",
     image:
       "https://images.unsplash.com/photo-1544148103-0773bf10d330?w=400&q=80",
   },
   {
     icon: Scissors,
-    name: "Hair Salon",
-    description: "Professional grooming and personal care services at your fingertips.",
+    name: "Professional Hair & Salon Services",
+    description:
+      "Access high-quality haircuts, grooming, and beauty services from experienced stylists at home or in salons.",
     image:
       "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&q=80",
   },
   {
     icon: Stethoscope,
-    name: "Medical",
-    description: "Access healthcare professionals, book appointments, and get medicine delivery.",
+    name: "Medical & Healthcare Services",
+    description:
+      "Connect with licensed doctors, schedule consultations, and receive doorstep medicine delivery with ease.",
     image:
       "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&q=80",
   },
 ];
-
 export default function Index() {
   const [scrollY, setScrollY] = useState(0);
   const { isAuthenticated } = useAuth();
@@ -76,7 +80,8 @@ export default function Index() {
               Premium Everyday Services at Your Fingertips
             </h2>
             <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-              Femivio brings together daily essentials — from travel to wellness — to simplify your lifestyle.
+              Femivio brings together daily essentials — from travel to wellness
+              — to simplify your lifestyle.
             </p>
           </div>
 
@@ -130,7 +135,8 @@ export default function Index() {
             Start Living Smarter Today
           </h2>
           <p className="text-lg text-[#613EA3] mb-8 max-w-2xl mx-auto">
-            Join Femivio and unlock convenience, health, dining, and travel solutions — all in one platform.
+            Join Femivio and unlock convenience, health, dining, and travel
+            solutions — all in one platform.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

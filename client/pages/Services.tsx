@@ -21,75 +21,53 @@ import {
 
 const services = [
   {
-    icon: Plane,
-    name: "Travel Planning",
-    description:
-      "Explore tailored travel packages, customized itineraries, and expert planning for unforgettable adventures.",
-    features: [
-      "Custom Itineraries",
-      "Worldwide Destinations",
-      "24/7 Travel Support",
-    ],
-    color: "bg-gradient-to-br from-blue-400 to-blue-600",
-    link: "/services/travel",
-  },
-  {
     icon: Bike,
-    name: "Bike Tours",
+    name: "Affordable Ride Services",
     description:
-      "Join thrilling bike tours guided by professionals across scenic and adventurous trails.",
-    features: ["Expert Guides", "Safety Gear", "Scenic Routes"],
+      "Book reliable and affordable ride services with trained drivers and safe vehicles—ideal for daily commutes and local travel.",
+    features: ["Trained Drivers", "Real-Time Tracking", "Affordable Fares"],
     color: "bg-gradient-to-br from-green-400 to-green-600",
-    link: "/services/bike-rides",
+    link: "/services/ride",
   },
   {
     icon: Hotel,
-    name: "Hotel Booking",
+    name: "Hotel Room Reservations",
     description:
-      "Find the best hotel deals globally, from luxury resorts to budget-friendly stays.",
-    features: ["Verified Hotels", "Instant Booking", "Exclusive Discounts"],
+      "Reserve budget and premium hotel rooms instantly with verified listings and exclusive deals across top destinations.",
+    features: ["Verified Hotels", "Instant Booking", "Member Discounts"],
     color: "bg-gradient-to-br from-purple-400 to-purple-600",
-    link: "/services/hotels",
+    link: "/services/hotel",
   },
   {
     icon: Coffee,
-    name: "Dining & Cuisine",
+    name: "Restaurant Table Booking",
     description:
-      "Enjoy gourmet experiences and local delicacies at top-rated restaurants and cafes.",
-    features: ["Gourmet Chefs", "Cultural Cuisine", "Diverse Menus"],
+      "Secure tables at popular restaurants and experience top-rated cuisines with hassle-free dining reservations.",
+    features: ["Easy Booking", "Fine Dining", "Top Restaurants"],
     color: "bg-gradient-to-br from-orange-400 to-orange-600",
-    link: "/services/food-&-dining",
+    link: "/services/dining",
   },
   {
     icon: Scissors,
-    name: "Salon Services",
+    name: "Professional Salon Services",
     description:
-      "Access premium hair and beauty services designed for style, comfort, and confidence.",
-    features: ["Professional Stylists", "Modern Trends", "Quality Products"],
+      "Experience premium salon treatments from skilled professionals using quality beauty and hair care products.",
+    features: ["Expert Stylists", "Modern Techniques", "Safe Products"],
     color: "bg-gradient-to-br from-pink-400 to-pink-600",
-    link: "/services/hair-salon",
-  },
-  {
-    icon: Heart,
-    name: "Wellness for Women",
-    description:
-      "Comprehensive wellness services focused on women’s health, beauty, and relaxation.",
-    features: ["Spa Treatments", "Holistic Therapies", "Certified Experts"],
-    color: "bg-gradient-to-br from-rose-400 to-rose-600",
-    link: "/services/women's-care",
+    link: "/services/salon",
   },
   {
     icon: Stethoscope,
-    name: "Medical Services",
+    name: "Doctor Consultation Services",
     description:
-      "Reliable healthcare solutions including virtual consultations and diagnostic services.",
+      "Book in-person or online doctor consultations with licensed healthcare providers for timely medical support.",
     features: [
-      "Trusted Practitioners",
-      "Modern Equipment",
-      "Flexible Appointments",
+      "Qualified Doctors",
+      "Online & Offline Options",
+      "Fast Appointments",
     ],
     color: "bg-gradient-to-br from-red-400 to-red-600",
-    link: "/services/medical",
+    link: "/services/doctor",
   },
 ];
 
@@ -220,7 +198,7 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -235,17 +213,18 @@ export default function Services() {
           </div>
           <PhotoGallery photos={allServicePhotos} />
         </div>
-      </section>
+      </section> */}
 
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Why Choose TravelFlow?
+              Why Choose Femivio for Local & Lifestyle Services?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              TravelFlow is your dedicated partner in crafting premium journeys
-              and lifestyle services.
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              Femivio connects you with reliable, on-demand services — from
+              travel to wellness — tailored for comfort, quality, and trust.
+              Here’s what sets us apart.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -254,11 +233,12 @@ export default function Services() {
                 <Star className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">
-                Premium Quality
+                Top-Quality Local Services
               </h3>
               <p className="text-gray-600">
-                We ensure top-tier quality by partnering with the best service
-                providers in the industry.
+                We partner with certified and verified professionals to deliver
+                trusted services including transport, healthcare, food, and
+                more.
               </p>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-lg text-center">
@@ -266,11 +246,11 @@ export default function Services() {
                 <Shield className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">
-                Secure & Trusted
+                Secure & Transparent Experience
               </h3>
               <p className="text-gray-600">
-                Your privacy, security, and satisfaction are our highest
-                priorities.
+                Your data is protected, and every transaction is clear — so you
+                can book with peace of mind.
               </p>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-lg text-center">
@@ -278,35 +258,39 @@ export default function Services() {
                 <Heart className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">
-                Personalized Care
+                Personalized Services for Every Need
               </h3>
               <p className="text-gray-600">
-                Every service is tailored for your comfort, convenience, and
-                lifestyle goals.
+                Whether you're booking a ride or a doctor, we tailor services to
+                suit your lifestyle and preferences.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 from-gray-50 to-blue-50">
+      <section
+        className="py-20"
+        style={{ backgroundColor: "rgb(243, 237, 251)" }}
+      >
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Get Started?
+            Book Trusted Local Services with Femivio
           </h2>
-          <p className="text-xl mb-12 max-w-2xl mx-auto">
-            Book your next adventure or wellness service with TravelFlow and
-            experience excellence.
+          <p className="text-xl mb-12 max-w-2xl mx-auto text-gray-700">
+            Discover and book reliable services like rides, food delivery,
+            doctor consultations, hotel bookings, and more — all in one place
+            with Femivio. Fast, secure, and hassle-free.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contact"
               className="bg-white text-primary-700 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transform hover:scale-105 transition-all duration-300"
             >
-              Book a Service
+              Book a Service Now
             </Link>
-            <button className="border-2 px-8 py-4 rounded-full text-lg font-semibold hover:text-primary-700 transition-all duration-300">
-              Get Quote
+            <button className="border-2 border-primary-700 text-primary-700 px-8 py-4 rounded-full text-lg font-semibold hover:bg-white transition-all duration-300">
+              Get a Free Quote
             </button>
           </div>
         </div>

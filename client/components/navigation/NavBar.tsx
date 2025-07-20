@@ -28,13 +28,13 @@ export const NavBar: React.FC = () => {
     location.pathname === path || location.pathname.startsWith(`${path}/`);
 
   const services = [
-    { name: "Affordable Ride Services", path: "/services/ride" },
-    { name: "Online Food Booking", path: "/services/food" },
-    { name: "Prescription Medicine Delivery", path: "/services/medicine" },
+    { name: "Affordable Ride Services", path: "/services/bike-rides" },
+    { name: "Online Food Booking", path: "/services/food-&-dining" },
+    { name: "Prescription Medicine Delivery", path: "/services/medical" },
     { name: "Restaurant Table Booking", path: "/services/dining" },
-    { name: "Hotel Room Reservations", path: "/services/hotel" },
+    { name: "Hotel Room Reservations", path: "/services/hotels" },
     { name: "Doctor Consultation Services", path: "/services/doctor" },
-    { name: "Professional Salon Services", path: "/services/salon" },
+    { name: "Professional Salon Services", path: "/services/hair-salon" },
   ];
 
   const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
@@ -125,7 +125,7 @@ export const NavBar: React.FC = () => {
                     }}
                     className="text-gray-700 hover:text-[#613EA3] font-semibold px-4 py-2 rounded-lg hover:bg-[#f5f1ff] transition"
                   >
-                    Sign In
+                    Login
                   </button>
                   <button
                     onClick={() => {

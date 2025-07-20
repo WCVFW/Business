@@ -13,13 +13,14 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Travel from "./pages/services/Travel";
-import BikeRides from "./pages/services/BikeRides";
+import BikeRides from "./pages/services/VehicleBookingPage";
 import Hotels from "./pages/services/Hotels";
 import Food from "./pages/services/Food";
 import HairSalon from "./pages/services/HairSalon";
 import WomensCare from "./pages/services/WomensCare";
 import Medical from "./pages/services/Medical";
 import NotFound from "./pages/NotFound";
+import VehicleManager from "./pages/admin/VehicleManager";
 
 const queryClient = new QueryClient();
 
@@ -45,6 +46,7 @@ const App = () => (
             <Route path="/services/medical" element={<Medical />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
+            <Route path="/dashboard/vehicles" element={<VehicleManager />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
