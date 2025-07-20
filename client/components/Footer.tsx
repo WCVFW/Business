@@ -1,7 +1,20 @@
 "use client";
 
-import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Globe, Heart, Facebook, Twitter, Instagram } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Globe,
+  Heart,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Youtube,
+  Github,
+} from "lucide-react";
+
+const currentYear = new Date().getFullYear();
 
 export default function Footer() {
   return (
@@ -14,44 +27,60 @@ export default function Footer() {
               <div className="w-12 h-12 bg-[#613EA3] rounded-xl flex items-center justify-center shadow-lg">
                 <MapPin className="w-6 h-6 text-white" />
               </div>
-              <span className="text-2xl font-extrabold text-[#613EA3] tracking-tight">TravelFlow</span>
+              <a
+                href="/"
+                className="text-2xl font-extrabold text-[#613EA3] tracking-tight"
+              >
+                Femivio
+              </a>
             </div>
             <p className="text-sm text-gray-600 leading-relaxed">
-              Your trusted partner for unforgettable travel experiences and premium lifestyle services.
+              Femivio is your all-in-one lifestyle partner — from food and hotel
+              bookings to ride-sharing, medicine delivery, and on-demand
+              healthcare. Simplifying life, one service at a time.
             </p>
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#613EA3]" />
-                <span>+1 (555) 123-4567</span>
+                <a href="tel:+15551234567">+1 (555) 123-4567</a>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#613EA3]" />
-                <span>hello@travelflow.com</span>
+                <a href="mailto:support@femivio.com">support@femivio.com</a>
               </div>
               <div className="flex items-center gap-2">
                 <Globe className="w-4 h-4 text-[#613EA3]" />
-                <span>Global in 50+ Countries</span>
+                <a href="#">Serving Globally</a>
               </div>
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-[#613EA3] uppercase tracking-wide">Services</h4>
+            <h4 className="text-lg font-semibold mb-4 text-[#613EA3] uppercase tracking-wide">
+              Services
+            </h4>
             <ul className="space-y-2 text-sm">
               {[
-                { to: "/services/travel", label: "Travel Planning" },
-                { to: "/services/hotels", label: "Hotel Booking" },
-                { to: "/services/bike-rides", label: "Bike Tours" },
-                { to: "/services/food-dining", label: "Dining" },
+                { href: "/services/food", label: "Online Food Booking" },
+                { href: "/services/hotel", label: "Hotel Room Reservations" },
+                { href: "/services/ride", label: "Affordable Ride Services" },
+                {
+                  href: "/services/medicine",
+                  label: "Prescription Medicine Delivery",
+                },
+                {
+                  href: "/services/doctor",
+                  label: "Doctor Consultation Services",
+                },
               ].map((item) => (
-                <li key={item.to}>
-                  <Link
-                    to={item.to}
+                <li key={item.href}>
+                  <a
+                    href={item.href}
                     className="hover:text-[#613EA3] transition-colors duration-200"
                   >
                     {item.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -59,21 +88,23 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-[#613EA3] uppercase tracking-wide">Company</h4>
+            <h4 className="text-lg font-semibold mb-4 text-[#613EA3] uppercase tracking-wide">
+              Company
+            </h4>
             <ul className="space-y-2 text-sm">
               {[
-                { to: "/about", label: "About Us" },
-                { to: "/contact", label: "Contact" },
-                { to: "/privacy", label: "Privacy Policy" },
-                { to: "/terms", label: "Terms of Service" },
+                { href: "/about", label: "About Us" },
+                { href: "/contact", label: "Connect with Us" },
+                { href: "/privacy", label: "Privacy Policy" },
+                { href: "/terms", label: "Terms of Use" },
               ].map((item) => (
-                <li key={item.to}>
-                  <Link
-                    to={item.to}
+                <li key={item.href}>
+                  <a
+                    href={item.href}
                     className="hover:text-[#613EA3] transition-colors duration-200"
                   >
                     {item.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -81,19 +112,28 @@ export default function Footer() {
 
           {/* What We Do */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-[#613EA3] uppercase tracking-wide">What We Do</h4>
+            <h4 className="text-lg font-semibold mb-4 text-[#613EA3] uppercase tracking-wide">
+              What We Do
+            </h4>
             <ul className="space-y-2 text-sm">
               {[
-                "Education & Awareness",
-                "Healthcare Support",
-                "Legal Assistance",
-                "Counseling",
-                "Skill Development",
-                "Emergency Help",
-              ].map((item, idx) => (
+                { href: "/support/healthcare", label: "Healthcare Support" },
+                { href: "/support/legal", label: "Legal Assistance" },
+                { href: "/support/counseling", label: "Counseling Services" },
+                {
+                  href: "/support/skills",
+                  label: "Skill Development Programs",
+                },
+                { href: "/support/emergency", label: "24/7 Emergency Help" },
+              ].map(({ href, label }, idx) => (
                 <li key={idx} className="flex items-center gap-2">
                   <Heart className="w-4 h-4 text-[#613EA3]" />
-                  <span>{item}</span>
+                  <a
+                    href={href}
+                    className="hover:text-[#613EA3] transition-colors duration-200"
+                  >
+                    {label}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -101,40 +141,53 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-[#613EA3] uppercase tracking-wide">Stay Connected</h4>
+            <h4 className="text-lg font-semibold mb-4 text-[#613EA3] uppercase tracking-wide">
+              Stay Connected
+            </h4>
             <p className="text-sm text-gray-600 mb-4">
-              Subscribe to our newsletter for offers and updates.
+              Join our newsletter to get the latest updates on services, offers,
+              and innovations.
             </p>
-            <form className="flex flex-col sm:flex-row gap-3">
+            <form className="flex flex-col gap-3">
               <input
                 type="email"
                 placeholder="Your email address"
-                className="flex-1 px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#613EA3] text-sm shadow-sm"
+                className="px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#613EA3] text-sm shadow-sm"
               />
-              <button
+              <input
                 type="submit"
-                className="bg-[#613EA3] text-white px-5 py-2 rounded-md hover:bg-[#4b2e82] transition shadow-md"
-              >
-                Subscribe
-              </button>
+                value="Subscribe"
+                className="cursor-pointer bg-[#613EA3] text-white px-5 py-2 rounded-md hover:bg-[#4b2e82] transition shadow-md"
+              />
             </form>
-            <div className="mt-6 flex gap-4">
-              <a href="#" className="text-[#613EA3] hover:text-[#4b2e82]">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-[#613EA3] hover:text-[#4b2e82]">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-[#613EA3] hover:text-[#4b2e82]">
-                <Instagram className="w-5 h-5" />
-              </a>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {[
+                { icon: Facebook, url: "https://facebook.com" },
+                { icon: Twitter, url: "https://twitter.com" },
+                { icon: Instagram, url: "https://instagram.com" },
+                { icon: Linkedin, url: "https://linkedin.com" },
+                { icon: Youtube, url: "https://youtube.com" },
+                // { icon: Github, url: "https://github.com" },
+              ].map(({ icon: Icon, url }, idx) => (
+                <a
+                  key={idx}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 flex items-center justify-center rounded-full bg-[#F3F0FA] text-[#613EA3] hover:bg-[#613EA3] hover:text-white transition-colors shadow-sm"
+                >
+                  <Icon className="w-4 h-4" />
+                </a>
+              ))}
             </div>
           </div>
         </div>
 
         {/* Footer Bottom */}
         <div className="mt-16 border-t pt-6 text-center text-sm text-gray-500">
-          &copy; 2025 <span className="text-[#613EA3] font-semibold">TravelFlow</span>. All rights reserved.
+          &copy; {currentYear}{" "}
+          <span className="text-[#613EA3] font-semibold">Femivio</span>. All
+          rights reserved.
         </div>
       </div>
     </footer>

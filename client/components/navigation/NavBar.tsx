@@ -13,7 +13,7 @@ export const NavBar: React.FC = () => {
   const [showServicesDropdown, setShowServicesDropdown] = useState(false);
   const { isAuthenticated } = useAuth();
   const location = useLocation();
-  // Add scrollToTop function at the top of your NavBar component
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -28,13 +28,15 @@ export const NavBar: React.FC = () => {
     location.pathname === path || location.pathname.startsWith(`${path}/`);
 
   const services = [
-    { name: "Education & Awareness", path: "/services/education" },
-    { name: "Healthcare Support", path: "/services/healthcare" },
-    { name: "Legal Assistance", path: "/services/legal" },
-    { name: "Counseling", path: "/services/counseling" },
-    { name: "Skill Development", path: "/services/skills" },
-    { name: "Emergency Help", path: "/services/emergency" },
+    { name: "Affordable Ride Services", path: "/services/ride" },
+    { name: "Online Food Booking", path: "/services/food" },
+    { name: "Prescription Medicine Delivery", path: "/services/medicine" },
+    { name: "Restaurant Table Booking", path: "/services/dining" },
+    { name: "Hotel Room Reservations", path: "/services/hotel" },
+    { name: "Doctor Consultation Services", path: "/services/doctor" },
+    { name: "Professional Salon Services", path: "/services/salon" },
   ];
+
   const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
 
   const handleMouseEnter = () => {
@@ -55,61 +57,45 @@ export const NavBar: React.FC = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrollY > 50
-          ? "bg-white/90 backdrop-blur shadow-md"
-          : "bg-white/70 backdrop-blur-sm"
-          }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrollY > 50
+            ? "bg-white/90 backdrop-blur shadow-md"
+            : "bg-white/70 backdrop-blur-sm"
+        }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2">
+            <Link to="/" onClick={scrollToTop} className="flex items-center gap-2">
               <div className="w-10 h-10 bg-[#613EA3] rounded-xl flex items-center justify-center">
                 <MapPin className="w-6 h-6 text-white" />
               </div>
-              <span className="text-2xl font-bold text-[#613EA3]">
-                Femivio
-              </span>
+              <span className="text-2xl font-bold text-[#613EA3]">Femivio</span>
             </Link>
 
             {/* Desktop Nav */}
             <div className="hidden lg:flex items-center gap-6">
-              {[
-                { name: "Home", path: "/" },
-                { name: "About", path: "/about" },
-                { name: "Contact", path: "/contact" },
-              ].map((item) => (
+              {[{ name: "Home", path: "/" }, { name: "About", path: "/about" }, { name: "Contact", path: "/contact" }].map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`px-4 py-2 rounded-lg transition-all duration-200 ${isActivePage(item.path)
-                    ? "bg-[#ebe7f8] text-[#613EA3] font-semibold"
-                    : "text-gray-700 hover:text-[#613EA3] hover:bg-[#f5f1ff]"
-                    }`}
+                  onClick={scrollToTop}
+                  className={`px-4 py-2 rounded-lg transition-all duration-200 ${
+                    isActivePage(item.path)
+                      ? "bg-[#ebe7f8] text-[#613EA3] font-semibold"
+                      : "text-gray-700 hover:text-[#613EA3] hover:bg-[#f5f1ff]"
+                  }`}
                 >
                   {item.name}
                 </Link>
               ))}
 
               {/* Services Dropdown */}
-              <div
-                className="relative"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-              >
-                <div
-                  className={`flex items-center px-4 py-2 rounded-lg cursor-pointer transition-all duration-200 ${isActivePage("/services")
-                    ? "bg-[#ebe7f8] text-[#613EA3] font-semibold"
-                    : "text-gray-700 hover:text-[#613EA3] hover:bg-[#f5f1ff]"
-                    }`}
-                >
+              <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                <div className="flex items-center px-4 py-2 rounded-lg cursor-pointer transition-all duration-200 text-gray-700 hover:text-[#613EA3] hover:bg-[#f5f1ff]">
                   <span>Services</span>
-                  <ChevronDown
-                    className={`w-4 h-4 ml-1 transition-transform duration-300 ${showServicesDropdown ? "rotate-180" : ""
-                      }`}
-                  />
+                  <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-300 ${showServicesDropdown ? "rotate-180" : ""}`} />
                 </div>
-
                 {showServicesDropdown && (
                   <div className="absolute left-0 top-full mt-2 w-64 bg-white border border-gray-200 shadow-lg rounded-lg p-4 z-50">
                     <div className="grid grid-cols-1 gap-2 text-sm text-gray-700">
@@ -117,6 +103,7 @@ export const NavBar: React.FC = () => {
                         <Link
                           key={item.path}
                           to={item.path}
+                          onClick={scrollToTop}
                           className="px-3 py-2 rounded-md hover:bg-[#ebe7f8] hover:text-[#613EA3] transition"
                         >
                           {item.name}
@@ -127,7 +114,6 @@ export const NavBar: React.FC = () => {
                 )}
               </div>
 
-              {/* Auth Buttons */}
               {isAuthenticated ? (
                 <UserProfile />
               ) : (
@@ -159,11 +145,7 @@ export const NavBar: React.FC = () => {
               className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? (
-                <X className="w-6 h-6 text-gray-700" />
-              ) : (
-                <Menu className="w-6 h-6 text-gray-700" />
-              )}
+              {isMenuOpen ? <X className="w-6 h-6 text-gray-700" /> : <Menu className="w-6 h-6 text-gray-700" />}
             </button>
           </div>
         </div>
@@ -172,26 +154,24 @@ export const NavBar: React.FC = () => {
         {isMenuOpen && (
           <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
             <div className="px-4 py-6 space-y-4">
-              {[
-                { name: "Home", path: "/" },
-                { name: "About", path: "/about" },
-                { name: "Services", path: "/services" },
-                { name: "Contact", path: "/contact" },
-              ].map((item) => (
+              {[{ name: "Home", path: "/" }, { name: "About", path: "/about" }, { name: "Services", path: "/services" }, { name: "Contact", path: "/contact" }].map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`block px-4 py-3 rounded-lg transition ${isActivePage(item.path)
-                    ? "bg-[#613EA3]/10 text-[#613EA3] font-semibold"
-                    : "text-gray-700 hover:bg-gray-100"
-                    }`}
+                  onClick={() => {
+                    scrollToTop();
+                    setIsMenuOpen(false);
+                  }}
+                  className={`block px-4 py-3 rounded-lg transition ${
+                    isActivePage(item.path)
+                      ? "bg-[#613EA3]/10 text-[#613EA3] font-semibold"
+                      : "text-gray-700 hover:bg-gray-100"
+                  }`}
                 >
                   {item.name}
                 </Link>
               ))}
 
-              {/* Mobile Auth */}
               {isAuthenticated ? (
                 <div className="pt-4 border-t border-gray-200">
                   <UserProfile />
@@ -225,7 +205,6 @@ export const NavBar: React.FC = () => {
         )}
       </nav>
 
-      {/* Auth Modal */}
       <AuthModal
         isOpen={showAuthModal}
         onClose={() => setShowAuthModal(false)}

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { NavBar } from "../components/navigation/NavBar";
 import Footer from "@/components/Footer";
+import { HeartHandshake, ShieldCheck, Globe2 } from "lucide-react";
 import {
   MapPin,
   Users,
@@ -25,49 +26,49 @@ const stats = [
 
 const team = [
   {
-    name: "Alex Rodriguez",
-    role: "CEO & Founder",
+    name: "Mr Pradeep",
+    role: "Founder",
     bio: "Travel enthusiast with 20+ years in hospitality industry",
-    avatar: "AR",
+    avatar: "/images/pradeep.jpg",
   },
   {
-    name: "Sarah Kim",
-    role: "Head of Operations",
+    name: "Mr Shenbagavel.V",
+    role: "Head of Director",
     bio: "Expert in logistics and customer experience optimization",
-    avatar: "SK",
+    avatar: "/images/shenbagavel.jpg",
   },
   {
-    name: "David Chen",
-    role: "Travel Director",
+    name: "Mr Prakash.V",
+    role: "Co-Founder",
     bio: "World traveler who has visited 80+ countries",
-    avatar: "DC",
+    avatar: "/assets/images/Prakash.jpg",
   },
   {
-    name: "Emma Johnson",
-    role: "Customer Success",
+    name: "Miss Santhiya.E",
+    role: "Co-Founder",
     bio: "Dedicated to ensuring every customer has an amazing experience",
-    avatar: "EJ",
+    avatar: "/images/santhiya.jpg",
   },
 ];
 
 const values = [
   {
-    icon: Heart,
-    title: "Customer First",
+    icon: HeartHandshake,
+    title: "Customer-Centered Service",
     description:
-      "Every decision we make is centered around delivering exceptional customer experiences.",
+      "We focus on providing reliable, fast, and caring support across all services—from food delivery and hotel bookings to rides and medicine needs.",
   },
   {
-    icon: Shield,
-    title: "Trust & Safety",
+    icon: ShieldCheck,
+    title: "Trust, Safety & Quality",
     description:
-      "Your safety and security are our top priorities in everything we do.",
+      "Whether you're booking a ride, ordering meals, or receiving medical support, we ensure your safety and satisfaction with every interaction.",
   },
   {
-    icon: Globe,
-    title: "Global Reach",
+    icon: Globe2,
+    title: "All-in-One Access, Anywhere",
     description:
-      "Connecting you to amazing experiences across the world with local expertise.",
+      "Our platform connects you to essential services like food, transport, stays, and healthcare — all under one trusted system, wherever you are.",
   },
 ];
 
@@ -99,18 +100,16 @@ export default function About() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 animate-fade-in-up">
-              About
-              <span className="text-[#613EA3]">
-                {" "}
-                TravelFlow
-              </span>
+              About <span className="text-[#613EA3]">Femivio</span>
             </h1>
             <p
               className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto animate-fade-in-up"
               style={{ animationDelay: "200ms" }}
             >
-              We're passionate about creating extraordinary travel experiences
-              and connecting people with the world's most amazing destinations.
+              At Femivio, we’re redefining convenience by combining food
+              delivery, hotel and dining bookings, rides, medicine, and doctor
+              services into one powerful platform — making everyday living
+              seamless and stress-free.
             </p>
           </div>
 
@@ -142,51 +141,68 @@ export default function About() {
       </section>
 
       {/* Story Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-24 bg-gradient-to-br from-white to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="animate-slide-in-left">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            {/* Text Content */}
+            <div className="animate-fade-in-up">
+              <h2 className="text-5xl font-extrabold text-gray-900 mb-8 leading-tight">
                 Our Story
               </h2>
-              <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
+              <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                 <p>
-                  TravelFlow was born from a simple idea: travel should be
-                  magical, not stressful. Founded in 2009 by a group of
-                  passionate travelers, we set out to revolutionize how people
-                  experience the world.
+                  Founded in 2025, <strong>Femivio</strong> was born out of a
+                  simple yet powerful mission — to simplify everyday living by
+                  unifying essential services into one seamless platform.
                 </p>
                 <p>
-                  What started as a small travel agency has grown into a
-                  comprehensive lifestyle platform, offering everything from
-                  exotic travel packages to personal care services. We believe
-                  that great experiences extend beyond travel – they encompass
-                  every aspect of living well.
+                  We recognized the growing demand for convenience in a
+                  fast-paced world. People were juggling multiple apps just to
+                  manage daily tasks — from ordering food and booking hotels to
+                  arranging rides and accessing medical support. That’s where we
+                  saw the gap — and the opportunity.
                 </p>
                 <p>
-                  Today, we're proud to serve over 50,000 customers worldwide,
-                  helping them discover new destinations, enjoy premium
-                  services, and create memories that last a lifetime.
+                  Femivio brings together <strong>food delivery</strong>,{" "}
+                  <strong>hotel bookings</strong>,{" "}
+                  <strong>dining reservations</strong>,{" "}
+                  <strong>ride services</strong>,{" "}
+                  <strong>medicine delivery</strong>, and{" "}
+                  <strong>doctor access</strong> — all in one place. No
+                  switching between apps, no scattered services — just one
+                  smart, secure, and smooth experience.
+                </p>
+                <p>
+                  Built by a passionate team in 2025, our vision is to empower
+                  individuals and families with faster access to what they need
+                  — anytime, anywhere.
+                </p>
+                <p>
+                  From your next meal to your next medical appointment — Femivio
+                  is your trusted partner in modern living.
                 </p>
               </div>
               <Link
                 to="/contact"
-                className="inline-flex items-center mt-8 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                className="inline-flex items-center mt-10 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
                 style={{ backgroundColor: "#613EA3" }}
               >
                 <span>Get in Touch</span>
-                <ArrowRight className="w-5 h-5 ml-2" />
+                <ArrowRight className="w-5 h-5 ml-3" />
               </Link>
             </div>
 
-            <div className="animate-slide-in-right">
-              <div className="relative">
-                <div className="absolute inset-0 rounded-3xl transform rotate-6" style={{ backgroundColor: "#613EA3" }}></div>
-                <div className="relative bg-white rounded-3xl p-8 shadow-2xl">
+            {/* Visual Content */}
+            <div className="animate-fade-in-up">
+              <div className="relative group">
+                <div className="absolute inset-0 rounded-3xl transform rotate-3 scale-95 bg-[#613EA3] opacity-20 group-hover:scale-100 transition-transform duration-500"></div>
+                <div className="relative bg-white rounded-3xl p-6 shadow-2xl overflow-hidden">
                   <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center">
                     <div className="text-center">
-                      <Globe className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                      <p className="text-gray-500">Travel Video Placeholder</p>
+                      <Globe className="w-20 h-20 text-gray-400 mx-auto mb-4" />
+                      <p className="text-gray-500 text-lg font-medium">
+                        Travel Video Placeholder
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -201,11 +217,12 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Our Values
+              Our Core Values
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              These principles guide everything we do and shape how we serve our
-              customers.
+              From food and hotel stays to ride bookings and medical needs — our
+              values guide how we deliver convenience, safety, and quality in
+              everything we do.
             </p>
           </div>
 
@@ -218,7 +235,10 @@ export default function About() {
                   className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center animate-fade-in-up"
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6" style={{ backgroundColor: "#613EA3" }}>
+                  <div
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                    style={{ backgroundColor: "#613EA3" }}
+                  >
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
@@ -235,14 +255,16 @@ export default function About() {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 ">{/* bg-[#F3EDFB] */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 ">
+        {/* bg-[#F3EDFB] */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-[#613EA3] mb-4">
               Meet Our Team
             </h2>
             <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-              The passionate minds behind TravelFlow, committed to creating memorable journeys.
+              Everything you need — food, rides, rooms, and more — brought to
+              you by one expert team.
             </p>
           </div>
 
@@ -253,12 +275,16 @@ export default function About() {
                 className="relative bg-white shadow-xl rounded-2xl p-6 text-center transform transition duration-500 hover:-translate-y-2 hover:shadow-2xl animate-fade-in-up"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                {/* Avatar Bubble */}
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-[#613EA3] text-white flex items-center justify-center text-3xl font-bold shadow-md hover:scale-105 transition-transform duration-300">
-                  {member.avatar}
-                </div>
+                {/* Avatar Image */}
+                <img
+                  src={member.avatar}
+                  alt={member.name}
+                  className="w-32 h-32 mx-auto mb-4 rounded-full object-cover object-center shadow-md border border-[#613EA3] hover:scale-105 transition-transform duration-300"
+                />
                 {/* Member Info */}
-                <h3 className="text-lg font-bold text-gray-900">{member.name}</h3>
+                <h3 className="text-lg font-bold text-gray-900">
+                  {member.name}
+                </h3>
                 <p className="text-[#613EA3] font-medium text-sm mb-2">
                   {member.role}
                 </p>
@@ -277,24 +303,24 @@ export default function About() {
       <section className="py-10 bg-gradient-to-br from-gray-50 to-blue-50 ">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-[#4b2e82] mb-4">
-            Ready to Experience the Difference?
+            Ready to explore smarter?
           </h2>
           <p className="text-xl text-[#4b2e82] mb-8 max-w-2xl mx-auto">
-            Join our community of travelers and discover why TravelFlow is the
-            trusted choice for extraordinary experiences.
+            Discover why users choose TravelFlow for safe, convenient, and
+            all-in-one access to rides, meals, stays, medicine and more.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/services"
               className="bg-[#4b2e82] text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transform hover:scale-105 transition-all duration-300"
             >
-              Explore Services
+              Discover More
             </Link>
             <Link
               to="/contact"
               className="border-2 border-[#4b2e82] text-[#4b2e82] px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#4b2e82] hover:text-white transition-all duration-300"
             >
-              Contact Us
+              Get in Touch
             </Link>
           </div>
         </div>
